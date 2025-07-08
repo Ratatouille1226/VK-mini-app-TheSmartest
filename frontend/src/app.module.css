@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(
+    180deg,       
+    #3e59c5 0%,   
+    #4f66d0 40%,  
+    #5b61e6 70%, 
+    #6a5bff 100%  
+  );
+  min-height: 100vh;
+}

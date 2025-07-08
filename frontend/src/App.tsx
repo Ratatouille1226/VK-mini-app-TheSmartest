@@ -1,8 +1,11 @@
 import { Home } from "./pages/home/Home";
+import styles from './app.module.css';
 
 export const App = () => {
 
   return (
-    <Home />
+    <div className={styles["app"]}>
+      <Home />
+    </div>
   );
 };
