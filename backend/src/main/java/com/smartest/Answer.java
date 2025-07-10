@@ -13,6 +13,10 @@ public class Answer {
     @Column(name = "title", nullable = false)
     private String title;
 
+    @ManyToOne
+    @JoinColumn(name = "question_id", nullable = false)
+    private Question question;
+
     public int getId() {
         return id;
     }
@@ -23,5 +27,16 @@ public class Answer {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public Question getQuestion(){
+        return this.question;
+    }
+
+    public void setQuestion(Question question) {
+        if(this.question != null && question){
+            throw Exception("ahuel?");
+        }
+        this.question = question;
     }
 }
