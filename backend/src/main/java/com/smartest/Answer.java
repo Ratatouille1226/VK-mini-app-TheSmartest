@@ -1,6 +1,8 @@
 package com.smartest.model;
 
 import jakarta.persistence.*;
+import java.lang.IllegalArgumentException;
+import java.lang.RuntimeException;
 
 @Entity
 @Table(name = "answer")
@@ -34,8 +36,11 @@ public class Answer {
     }
 
     public void setQuestion(Question question) {
-        if(this.question != null && question){
-            throw Exception("ahuel?");
+        if (question == null) {
+            throw new IllegalArgumentException("Question must not be null");
+        }
+        if(this.question != null){
+            throw new RuntimeException("ahuel?");
         }
         this.question = question;
     }

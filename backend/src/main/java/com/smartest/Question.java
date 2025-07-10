@@ -13,7 +13,8 @@ public class Question {
     @Column(name = "title", nullable = false)
     private String title;
 
-    //Answer[] answers;
+    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Answer> answers = new ArrayList<>();
 
     @Column(name = "rightId", nullable = false)
     int rightId;
