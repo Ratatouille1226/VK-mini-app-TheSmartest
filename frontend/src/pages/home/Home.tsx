@@ -1,17 +1,14 @@
+import { Link } from "react-router-dom";
 import styles from './home.module.css';
+import { Hints } from "./components";
+
 
 export const Home = () => {
 
   return (
-    <div className={styles['wrapper']}>
-      <h1>Самый умный</h1>
-      <div className={styles["container"]}>
-          <div className={styles["conditions"]}>
-            <h2>Условия викторины</h2>
-          </div>
-          <button className="start__quiz">Начать викторину</button>
-          <button className="list__leaders">Посмотреть список лидеров</button>
-      </div>
+    <div className="home">
+    <Hints />
+    <Link to='/conditions' className={styles['link']}>Кто нажал тот лох</Link>
     </div>
   );
 };

@@ -1,0 +1,21 @@
+.hints {
+    width: 135px;
+    height: 93px;
+    background-color: #7baeffce;
+    border-top-left-radius: 35px;
+    border-bottom-right-radius: 50px;
+    font-size: 12px;
+    text-align: center;
+    margin: 10px;
+}
+
+.hints button {
+    width: 39px;
+    height: 39px;
+    border-radius: 50%;
+    border: 1px solid #cb2eff;
+    cursor: pointer;
+    background-color: unset;
+    font-size: 30px;
+    color: rgb(239, 61, 255);
+}

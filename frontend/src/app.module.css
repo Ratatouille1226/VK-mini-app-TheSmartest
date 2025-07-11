@@ -5,12 +5,24 @@
 }
 
 body {
-  background: linear-gradient(
-    180deg,       
-    #3e59c5 0%,   
-    #4f66d0 40%,  
-    #5b61e6 70%, 
-    #6a5bff 100%  
-  );
+  font-family: 'Inter', sans-serif;
+  background: #6757FF;
+}
+
+.app {
+  position: relative;
   min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.circle {
+  position: fixed; /* чтобы всегда был на экране */
+  width: 100%;
+  height: 40vh;
+  bottom: 0;
+  background-color: #392E70;
+  border-top-left-radius: 90%;
+  border-top-right-radius: 90%;
+  z-index: 0; /* ниже всего */
+  pointer-events: none; /* не мешает кликам! */
 }
