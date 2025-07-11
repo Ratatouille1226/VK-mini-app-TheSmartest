@@ -10,7 +10,7 @@ export const App = () => {
     <div className={styles["app"]}>
       <BrowserRouter>
         <Routes>
-          <Route path='/home' element={<Home />} />
+          <Route path='/' element={<Home />} />
           <Route path="/conditions" element={<Conditions />}/>
         </Routes>
       </BrowserRouter>
