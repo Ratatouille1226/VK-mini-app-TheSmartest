@@ -38,7 +38,7 @@ public class QuestionController {
         return questionRepository.save(question);
     }
 
-    // spring security permits. этот метод вообще по сути не нужен для реста, как будто его из под капота достаточно вызывать. Либо ебаться со Spring security <3
+    // spring security permits. этот метод вообще по сути не нужен для реста, как будто его из под капота достаточно вызывать. Либо внедрять с Spring security <3
     @DeleteMapping("delete/{id}")
     public void delete(@PathVariable("id") Long id) {
         questionRepository.deleteById(id);
