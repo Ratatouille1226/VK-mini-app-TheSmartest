@@ -1,10 +1,6 @@
-a{
-    font-size: 20px;
-    background-color: #9837E2;
-    padding: 10px 30px;
-    border-radius: 10px;
-    text-decoration: none;
-    color: white;
-    margin-top: 20px;
-    position: absolute;
+.home {
+    display: flex;
+    justify-content: space-around;
+    z-index: 10;
+    flex-wrap: wrap;
 }

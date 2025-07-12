@@ -1,0 +1,25 @@
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    z-index: 10;
+}
+
+button a {
+    text-decoration: none;
+    color: white;
+}
+
+.link__color {
+    background-color: #7060FF;
+}
+
+button {
+    height: 50px;
+    width: 330px;
+    cursor: pointer;
+    background-color: #9837E2;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+}
