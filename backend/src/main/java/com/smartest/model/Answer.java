@@ -10,16 +10,18 @@ public class Answer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Column(name = "title", nullable = false)
     private String title;
 
     @ManyToOne
     @JoinColumn(name = "question_id", nullable = false)
+    @JsonIgnore
+    // @JsonBackReference
     private Question question;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
