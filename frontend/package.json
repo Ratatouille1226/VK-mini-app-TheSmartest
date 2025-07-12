@@ -11,12 +11,23 @@
     "tunnel": "vk-tunnel --insecure=1 --http-protocol=http --ws-protocol=ws --host=0.0.0.0 --port=5173",
     "deploy": "vite build && vk-miniapps-deploy"
   },
+  "eslintConfig": {
+	"extends": [
+		"prettier"
+	],
+	"plugins": [
+		"prettier"
+	]
+  },
   "dependencies": {
     "@vkontakte/icons": "^2.92.0",
     "@vkontakte/vk-bridge": "^2.13.0",
     "@vkontakte/vk-bridge-react": "^1.0.1",
     "@vkontakte/vk-mini-apps-router": "^1.8.0",
     "@vkontakte/vkui": "^6.0.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.5.1",
+    "prettier": "^3.6.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^7.6.3"
