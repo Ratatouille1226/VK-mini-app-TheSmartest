@@ -31,7 +31,7 @@ public class QuestionController {
     }
 
     // можно доработать чтобы создавать вопрос с ответами через фронт. для этого нужно будет
-    // принимать объект title для Question и 4 title для answer.
+    // принимать объект title для Question и 4 title для answer. а, и индекс правильного ответа (1-4)
     // подумать про батч
     @PostMapping("/create")
     public Question create(@RequestBody Question question) {

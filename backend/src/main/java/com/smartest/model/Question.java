@@ -1,8 +1,11 @@
 package com.smartest.model;
 
 import jakarta.persistence.*;
+
 import java.util.List;
 import java.util.ArrayList;
+
+//import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name = "question")
@@ -19,13 +22,14 @@ public class Question {
     // @JsonManagedReference
     private List<Answer> answers = new ArrayList<>();
 
-    @Column(name = "rightId", nullable = false)
-    Long rightId;
+    @Column(name = "rightIndex", nullable = false)
+    Byte rightIndex;
 
     // getters, setters
     public Long getId(){
         return this.id;
     }
+
 
     public String getTitle(){
         return this.title;
@@ -35,22 +39,24 @@ public class Question {
         this.title = title;
     }
 
-    /*public getAnswers(){
+
+    public List<Answer> getAnswers(){
         return this.answers;
     }
 
-    public setAnswers(Answer[] answers){
+    public void setAnswers(List<Answer> answers){
         // проверка по айди уже совпадающих
-        answers.each{ it.question = this.id } // по-моему какая-то шляпа и суть метода надо производить на сторону Answer.
+        //answers.each{ it.question = this.id } // по-моему какая-то шляпа и суть метода надо производить на сторону Answer.
         // да и вообще вынести эту логику в контроллеры/сервисы
         this.answers = answers;
-    }*/
-
-    public Long getRightId() {
-        return rightId;
     }
 
-    public void setRightId(Long rightId) {
-        this.rightId = rightId;
+
+    public Byte getRightIndex() {
+        return this.rightIndex;
+    }
+
+    public void setRightIndex(Byte rightIndex) {
+        this.rightIndex = rightIndex;
     }
 }
