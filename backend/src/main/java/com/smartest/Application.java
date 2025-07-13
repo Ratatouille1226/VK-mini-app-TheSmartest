@@ -20,7 +20,7 @@ public class Application {
 	}
 
 	// создание вопросов и ответов при запуске приложения (hibernate.ddl-auto = create-drop)
-	@Bean
+	/*@Bean
 	public CommandLineRunner loadData(QuestionRepository questionRepository) {
 		return args -> {
 			Question question1 = new Question();
@@ -72,5 +72,5 @@ public class Application {
 
 			questionRepository.save(question2);
 		};
-	}
+	}*/
 }
