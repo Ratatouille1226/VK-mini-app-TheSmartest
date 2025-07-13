@@ -3,4 +3,16 @@
     justify-content: space-around;
     z-index: 10;
     flex-wrap: wrap;
+	padding: 50px 25px;
+}
+
+/* АДАПТИВ */ /* АДАПТИВ */ /* АДАПТИВ */ /* АДАПТИВ */ /* АДАПТИВ */
+
+@media (max-width: 670px) {
+	.home {
+		padding: 10px 15px;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
 }

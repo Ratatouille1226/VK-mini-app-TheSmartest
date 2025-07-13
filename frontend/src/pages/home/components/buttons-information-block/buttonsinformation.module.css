@@ -1,8 +1,18 @@
 .buttons {
     display: flex;
     flex-direction: column;
+	justify-content: space-between;
     gap: 25px;
     z-index: 10;
+}
+
+span {
+	font-size: 40px;
+	max-width: 500px;
+	font-weight: 100;
+}
+h1 {
+	font-size: 50px;
 }
 
 button a {
@@ -23,3 +33,54 @@ button {
     border-radius: 10px;
     font-size: 18px;
 }
+.buttons__block {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+/* АДАПТИВ */ /* АДАПТИВ */ /* АДАПТИВ */ /* АДАПТИВ */ /* АДАПТИВ */
+
+@media (max-width: 955px) {
+	.buttons {
+		justify-content: space-around;
+	}
+	h1 {
+	font-size: 50px;
+	margin-top: 80px;
+}
+}
+@media (max-width: 800px) {
+span {
+	max-width: 400px;
+}
+}
+
+@media (max-width: 700px) {
+	.buttons {
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 25px;
+	}
+	span {
+	max-width: 500px;
+	}
+		h1 {
+		margin-top: 0px;
+	}
+	}
+
+@media (max-width: 400px) {
+	span {
+	font-size: 30px;
+	}
+	h1 {
+		font-size:40px;
+	}
+	button {
+		height: 45px;
+		width: 300px;
+		font-size: 17px;
+	}
+}
+
