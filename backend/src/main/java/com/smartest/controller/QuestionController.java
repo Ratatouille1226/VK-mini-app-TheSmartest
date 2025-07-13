@@ -1,12 +1,14 @@
 package com.smartest.controller;
 
 import com.smartest.model.Question;
+import com.smartest.dto.QuestionDto;
 import com.smartest.repository.QuestionRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
+//import java.util.Optional;
 
 @RestController
 @RequestMapping("/questions")
@@ -25,7 +27,16 @@ public class QuestionController {
     }
 
     @GetMapping("get/{id}")
-    public Question get(@PathVariable("id") Long id) {
+    public QuestionDto get(@PathVariable("id") Long id) {
+        Question question = questionRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Question not found, ID - " + id));
+
+        return new QuestionDto(question);
+    }
+
+    // под удаление
+    @GetMapping("getTest/{id}")
+    public Question getTest(@PathVariable("id") Long id) {
         return questionRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Question not found, ID - " + id));
     }
