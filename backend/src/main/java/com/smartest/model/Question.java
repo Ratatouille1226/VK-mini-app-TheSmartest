@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import java.util.List;
 import java.util.ArrayList;
 
+import com.smartest.model.Complexity;
+
 //import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
@@ -15,8 +17,12 @@ public class Question {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "title", nullable = false)
-    private String title;
+    @Column(name = "text", nullable = false)
+    private String text;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "complexity", nullable = false)
+    private Complexity complexity;
 
     @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     // @JsonManagedReference
@@ -31,12 +37,12 @@ public class Question {
     }
 
 
-    public String getTitle(){
-        return this.title;
+    public String getText(){
+        return this.text;
     }
 
-    public void setTitle(String title){
-        this.title = title;
+    public void setText(String text){
+        this.text = text;
     }
 
 
@@ -58,5 +64,13 @@ public class Question {
 
     public void setRightIndex(Byte rightIndex) {
         this.rightIndex = rightIndex;
+    }
+
+    public Complexity getComplexity() {
+        return complexity;
+    }
+
+    public void setComplexity(Complexity complexity){
+        this.complexity = complexity;
     }
 }

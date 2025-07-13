@@ -8,12 +8,12 @@ import java.util.ArrayList;
 
 public class QuestionDto {
     private Long id;
-    private String title;
+    private String text;
     private List<Answer> answers = new ArrayList<>();
 
     public QuestionDto(Question question){
         this.id = question.getId();
-        this.title = question.getTitle();
+        this.text = question.getText();
         this.answers = question.getAnswers();
     }
 
@@ -22,8 +22,8 @@ public class QuestionDto {
         return this.id;
     }
 
-    public String getTitle(){
-        return this.title;
+    public String getText(){
+        return this.text;
     }
 
     public List<Answer> getAnswers(){

@@ -16,8 +16,8 @@ public class Answer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "title", nullable = false)
-    private String title;
+    @Column(name = "text", nullable = false)
+    private String text;
 
     @ManyToOne
     @JoinColumn(name = "question_id", nullable = false)
@@ -29,12 +29,12 @@ public class Answer {
         return id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getText() {
+        return text;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setText(String text) {
+        this.text = text;
     }
 
     public Question getQuestion(){
