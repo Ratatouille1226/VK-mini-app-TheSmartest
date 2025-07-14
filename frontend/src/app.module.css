@@ -15,14 +15,3 @@ body {
   overflow-x: hidden;
 }
 
-.circle {
-  position: fixed;
-  width: 100%;
-  height: 40vh;
-  bottom: 0;
-  background-color: #392E70;
-  border-top-left-radius: 90%;
-  border-top-right-radius: 90%;
-  z-index: 0;
-  pointer-events: none;
-}

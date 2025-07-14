@@ -1,7 +1,7 @@
 import styles from './app.module.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Conditions } from './pages/conditions/Conditions';
-import { Home } from './pages/home/Home';
+import { ImagesBackground } from './pages/home/components';
+import { Conditions, Home } from './pages';
 
 export const App = () => {
 	return (
@@ -12,7 +12,7 @@ export const App = () => {
 					<Route path="/conditions" element={<Conditions />} />
 				</Routes>
 			</BrowserRouter>
-			<div className={styles['circle']}></div>
+			<ImagesBackground />
 		</div>
 	);
 };
