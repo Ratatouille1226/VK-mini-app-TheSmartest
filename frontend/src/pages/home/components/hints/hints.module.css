@@ -19,3 +19,21 @@
     font-size: 30px;
     color: rgb(239, 61, 255);
 }
+
+/* АДАПТИВ */ /* АДАПТИВ */ /* АДАПТИВ */ /* АДАПТИВ */ /* АДАПТИВ */
+
+@media (max-width: 955px) {
+	.hints {
+		position: absolute;
+		top: 10px;
+		left: 10px;
+	}
+}
+
+@media (max-width: 700px) {
+	.hints {
+		position: relative;
+		top: 0px;
+		left: 0px;
+	}
+}

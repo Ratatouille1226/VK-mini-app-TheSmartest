@@ -14,6 +14,7 @@
 
 .user {
     display: flex;
+	justify-content: space-between;
     gap: 10px;
     align-items: center;
     margin-top: 15px;
@@ -29,7 +30,18 @@
     font-size: 18px;
 }
 
-a {
+.user a i {
+    font-size: 20px;
+	cursor: pointer;
+	color: rgb(87, 87, 255);
+	transition: .1s ease all;
+}
+.user a i:hover {
+    font-size: 22px;
+	transition: .1s ease all;
+}
+
+.link {
     color: rgb(255, 255, 255);
     text-decoration: none;
     margin-top: auto; /* прижимает к низу */

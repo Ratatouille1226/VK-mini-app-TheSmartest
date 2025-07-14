@@ -4,7 +4,7 @@ import styles from './conditions.module.css';
 export const Conditions = () => {
 	return (
 		<div className={styles['wrapper']}>
-			<h1>Самый умный</h1>
+			<span className={styles['smartest__title']}>Самый умный</span>
 			<div className={styles['container']}>
 				<div className={styles['conditions']}>
 					<h2>Условия викторины</h2>

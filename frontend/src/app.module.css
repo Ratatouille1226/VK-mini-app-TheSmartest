@@ -23,6 +23,6 @@ body {
   background-color: #392E70;
   border-top-left-radius: 90%;
   border-top-right-radius: 90%;
-  z-index: 0; 
-  pointer-events: none; 
+  z-index: 0;
+  pointer-events: none;
 }
