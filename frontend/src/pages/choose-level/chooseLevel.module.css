@@ -1,0 +1,33 @@
+
+.quiz {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	z-index: 20;
+	gap: 50px;
+	padding: 15px;
+	text-align: center;
+}
+
+.quiz h2 {
+	font-size: 35px;
+}
+
+.choose__level {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+.green {
+	background-color: rgba(40, 250, 40, 0.684);
+}
+.yellow {
+	background-color: rgba(250, 250, 40, 0.684);
+}
+.red {
+	background-color: rgba(250, 40, 40, 0.684);
+}

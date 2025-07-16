@@ -1,0 +1,44 @@
+.modal__container {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.666);
+	position: absolute;
+	z-index: 100;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: -50px;
+}
+.modal {
+	position: absolute;
+	max-width: 400px;
+	height: 350px;
+	margin: 10px;
+ 	background: #6757FF;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 20px 10px;
+	border-radius: 15px;
+	box-shadow: 1px 1px 8px rgb(239, 61, 255);
+	text-align: center;
+}
+
+.buttons {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 15px;
+}
+
+.modal button {
+	width: 80%;
+	height: 50px;
+}
+
+@media (max-width: 670px) {
+	.modal__container {
+		height: 110%;
+	}
+}

@@ -1,12 +1,16 @@
 import styles from './home.module.css';
-import { Hints, ButtonsInformation, Leaderboard } from './components';
+import { Hints, ButtonsInformation, Leaderboard, Modal } from './components';
+import { useAppSelector } from '../../hooks';
 
 export const Home = () => {
+	const isModal = useAppSelector((state) => state.modal.isOpen);
+
 	return (
 		<div className={styles['home']}>
 			<Hints />
 			<ButtonsInformation />
 			<Leaderboard />
+			{isModal ? <Modal /> : null}
 		</div>
 	);
 };

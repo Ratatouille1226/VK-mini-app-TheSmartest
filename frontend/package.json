@@ -12,14 +12,15 @@
     "deploy": "vite build && vk-miniapps-deploy"
   },
   "eslintConfig": {
-	"extends": [
-		"prettier"
-	],
-	"plugins": [
-		"prettier"
-	]
+    "extends": [
+      "prettier"
+    ],
+    "plugins": [
+      "prettier"
+    ]
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.8.2",
     "@vkontakte/icons": "^2.92.0",
     "@vkontakte/vk-bridge": "^2.13.0",
     "@vkontakte/vk-bridge-react": "^1.0.1",
@@ -30,6 +31,7 @@
     "prettier": "^3.6.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-redux": "^9.2.0",
     "react-router-dom": "^7.6.3"
   },
   "devDependencies": {
