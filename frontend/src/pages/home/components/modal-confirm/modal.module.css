@@ -31,6 +31,21 @@
 	align-items: center;
 	gap: 15px;
 }
+.buttons a {
+	height: 50px;
+    width: 330px;
+    cursor: pointer;
+    background-color: #9837E2;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+	text-decoration: none;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+}
 
 .modal button {
 	width: 80%;

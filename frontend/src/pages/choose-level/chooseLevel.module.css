@@ -22,12 +22,27 @@
 	flex-direction: column;
 	gap: 30px;
 }
-.green {
+.choose__level a {
+	height: 50px;
+    width: 330px;
+    cursor: pointer;
+    background-color: #9837E2;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+	text-decoration: none;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+}
+.choose__level a:nth-child(1) {
 	background-color: rgba(40, 250, 40, 0.684);
 }
-.yellow {
+.choose__level a:nth-child(2) {
 	background-color: rgba(250, 250, 40, 0.684);
 }
-.red {
+.choose__level a:nth-child(3) {
 	background-color: rgba(250, 40, 40, 0.684);
 }

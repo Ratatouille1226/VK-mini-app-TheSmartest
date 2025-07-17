@@ -15,28 +15,28 @@ h1 {
 	font-size: 50px;
 }
 
-button a {
-    text-decoration: none;
-    color: white;
+.buttons__block {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
 }
-
-.link__color {
-    background-color: #7060FF;
-}
-
-button {
-    height: 50px;
+.buttons__block a {
+	height: 50px;
     width: 330px;
     cursor: pointer;
     background-color: #9837E2;
     border: none;
     border-radius: 10px;
     font-size: 18px;
-}
-.buttons__block {
+	text-decoration: none;
+	text-align: center;
 	display: flex;
-	flex-direction: column;
-	gap: 20px;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+}
+.buttons__block a:nth-child(2) {
+    background-color: #7060FF;
 }
 
 /* АДАПТИВ */ /* АДАПТИВ */ /* АДАПТИВ */ /* АДАПТИВ */ /* АДАПТИВ */
@@ -77,7 +77,7 @@ span {
 	h1 {
 		font-size:40px;
 	}
-	button {
+	.buttons__block a {
 		height: 45px;
 		width: 300px;
 		font-size: 17px;

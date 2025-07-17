@@ -12,12 +12,11 @@ export const ButtonsInformation = () => {
 			<h1>Самый умный</h1>
 			<span>Привет Вася Пупкин скорее докажи что ты самый умный!</span>
 			<div className={styles['buttons__block']}>
-				<button>
-					<Link to="/conditions">Условия викторины</Link>
-				</button>
-				<button onClick={() => dispatch(openModal())} className={styles['link__color']}>
-					<Link to="/">Начать викторину</Link>
-				</button>
+				<Link to="/conditions">Условия викторины</Link>
+
+				<Link onClick={() => dispatch(openModal())} className={styles['link__color']} to="/">
+					Начать викторину
+				</Link>
 			</div>
 		</div>
 	);

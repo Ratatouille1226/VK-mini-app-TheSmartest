@@ -11,12 +11,10 @@ export const Modal = () => {
 			<div className={styles['modal']}>
 				<h2>Вы внимательно ознакомились с условиями викторины перед её началом?</h2>
 				<div className={styles['buttons']}>
-					<button>
-						<Link to="/conditions">Нет, ознакомиться</Link>
-					</button>
-					<button onClick={() => dispatch(closeModal())}>
-						<Link to="/choose-level">Да, начать викторину</Link>
-					</button>
+					<Link to="/conditions">Нет, ознакомиться</Link>
+					<Link onClick={() => dispatch(closeModal())} to="/choose-level">
+						Да, начать викторину
+					</Link>
 				</div>
 			</div>
 		</div>

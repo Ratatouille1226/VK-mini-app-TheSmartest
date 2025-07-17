@@ -3,7 +3,7 @@ import { Hints, ButtonsInformation, Leaderboard, Modal } from './components';
 import { useAppSelector } from '../../hooks';
 
 export const Home = () => {
-	const isModal = useAppSelector((state) => state.modal.isOpen);
+	const isModal: boolean = useAppSelector((state) => state.modal.isOpen);
 
 	return (
 		<div className={styles['home']}>
