@@ -1,10 +1,21 @@
-import { useAppSelector } from '../../hooks';
+import { useEffect } from 'react';
+import { useAppDispatch, useAppSelector } from '../../hooks';
 import styles from './quiz.module.css';
+import { fetchQuestions } from '../../slice-fetch/fetchQuestions';
 
 export const Quiz = () => {
-	const type: string = useAppSelector((state) => state.type.type);
+	const dispatch = useAppDispatch();
+	const type = useAppSelector((state) => state.type.type);
+	const { data: questions, status, error } = useAppSelector((state) => state.questions);
 
-	console.log(type);
+	useEffect(() => {
+		if (type) {
+			dispatch(fetchQuestions(type));
+		}
+	}, [type, dispatch]);
+
+	if (status === 'loading') return <p>Загрузка вопросов...</p>;
+	if (status === 'failed') return <p>Ошибка: {error}</p>;
 
 	return (
 		<div className={styles['wrapper__quiz']}>
@@ -12,10 +23,16 @@ export const Quiz = () => {
 				<div className={styles['progress']}></div>
 				<h1>Что такое ?</h1>
 				<ul>
-					<li>что</li>
-					<li>где</li>
-					<li>кто</li>
-					<li>а?</li>
+					{questions.map((q, i) => (
+						<li key={i}>
+							<h3>{q.title}</h3>
+							<ul>
+								{q.variants.map((v, idx) => (
+									<li key={idx}>{v}</li>
+								))}
+							</ul>
+						</li>
+					))}
 				</ul>
 			</div>
 		</div>
