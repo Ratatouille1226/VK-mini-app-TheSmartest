@@ -35,18 +35,21 @@ export const Quiz = () => {
 	return (
 		<div className={styles['wrapper__quiz']}>
 			<div className={styles['container__quiz']}>
-				<div className={styles['progress']} style={{ width: `${percentage}%` }}></div>
+				<div
+					className={styles['progress']}
+					style={{ width: `${percentage}%`, borderTopRightRadius: `${percentage === 100 ? `20px` : `0px`}` }}
+				></div>
 				{step !== questions.length ? (
-					<>
-						<h1>{question.title}</h1>
-						<ul>
+					<div className={styles['qustions__wrapper']}>
+						<h2>{question.title}</h2>
+						<div className={styles['questions']}>
 							{question.variants.map((ques, i) => (
-								<li onClick={() => onClickVariant(i)} key={i}>
+								<span onClick={() => onClickVariant(i)} key={i}>
 									{ques}
-								</li>
+								</span>
 							))}
-						</ul>
-					</>
+						</div>
+					</div>
 				) : (
 					<>
 						<span>
