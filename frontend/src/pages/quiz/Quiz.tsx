@@ -2,11 +2,15 @@ import { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import styles from './quiz.module.css';
 import { fetchQuestions } from '../../slice-fetch/fetchQuestions';
-import { Link } from 'react-router-dom';
+import { setScoreUser } from '../../slice-fetch/setScoreUser';
+import EndQuiz from './components/end-quiz/EndQuiz';
 
 export const Quiz = () => {
 	const dispatch = useAppDispatch();
 	const type = useAppSelector((state) => state.type.type);
+	const users = useAppSelector((state) => state.user.list);
+	const currentUser = users.find((cur) => cur.id === '1'); //Текущий пользователь
+
 	const { data: questions, status, error } = useAppSelector((state) => state.questions);
 
 	const [step, setStep] = useState<number>(0);
@@ -21,7 +25,6 @@ export const Quiz = () => {
 	}, [type, dispatch]);
 
 	const onClickVariant = (index: number) => {
-		console.log(index);
 		setStep(step + 1);
 
 		if (index === question.correct) {
@@ -29,8 +32,21 @@ export const Quiz = () => {
 		}
 	};
 
-	if (status === 'loading') return <p>Загрузка вопросов...</p>;
-	if (status === 'failed') return <p>Ошибка: {error}</p>;
+	const setUserScore = () => {
+		if (!type) return;
+
+		const isAlreadyPassed =
+			(type === 'easy' && currentUser?.isEndEasyQuiz) ||
+			(type === 'medium' && currentUser?.isEndMediumQuiz) ||
+			(type === 'hard' && currentUser?.isEndHardQuiz);
+
+		if (isAlreadyPassed) return;
+
+		dispatch(setScoreUser({ id: '1', score, type }));
+	};
+
+	// if (status === 'loading') return <p>Загрузка вопросов...</p>;
+	// if (status === 'failed') return <p>Ошибка: {error}</p>;
 
 	return (
 		<div className={styles['wrapper__quiz']}>
@@ -51,14 +67,13 @@ export const Quiz = () => {
 						</div>
 					</div>
 				) : (
-					<>
-						<span>
-							Вы завершили тест: правильных ответов {score} из {questions.length}
-						</span>
-						<Link onClick={() => setStep(0)} to="/">
-							На главную
-						</Link>
-					</>
+					<EndQuiz
+						score={score}
+						questions={questions}
+						setStep={setStep}
+						setUserScore={setUserScore}
+						currentUser={currentUser}
+					/>
 				)}
 			</div>
 		</div>

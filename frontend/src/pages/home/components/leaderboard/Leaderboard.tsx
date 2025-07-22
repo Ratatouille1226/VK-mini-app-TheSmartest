@@ -9,14 +9,20 @@ export const Leaderboard = () => {
 			<h2>Список лидеров</h2>
 			<div className={styles['user']}>
 				<img src={sith} alt="sith" />
-				<span>Владыка Ситх</span>
+				<div className={styles['about']}>
+					<span>Владыка Ситх</span>
+					<span>0</span>
+				</div>
 				<a href="https://vk.com/id867482045">
 					<i className="fa-solid fa-eye"></i>
 				</a>
 			</div>
 			<div className={styles['user']}>
 				<img src={neSith} alt="neSith" />
-				<span>Уилл Смит</span>
+				<div className={styles['about']}>
+					<span>Уилл Смит</span>
+					<span>0</span>
+				</div>
 				<a href="https://vk.com/tjacob">
 					<i className="fa-solid fa-eye"></i>
 				</a>

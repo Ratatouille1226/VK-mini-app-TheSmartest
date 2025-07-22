@@ -47,3 +47,8 @@
     margin-top: auto; /* прижимает к низу */
     display: block;
 }
+
+.about {
+	display: flex;
+	flex-direction: column;
+}
