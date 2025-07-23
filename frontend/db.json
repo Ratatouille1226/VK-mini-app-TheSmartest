@@ -96,14 +96,14 @@
   "users": [
     {
       "id": "1",
-      "score": 6,
+      "score": 7,
       "name": "Владыка Ситх",
       "isEndEasyQuiz": true,
       "isEndMediumQuiz": true,
-      "isEndHardQuiz": false,
+      "isEndHardQuiz": true,
       "url": "https://vk.com/id867482045",
       "img": "https://sun9-59.userapi.com/s/v1/ig2/URmN7ez99LHt0r2qVYsQdFio-EdlLWyrHDeKU84PMozNN0vtPL_12ltxumdi6uxdPImQitntcPgvXdSWni9zeOrm.jpg?quality=95&as=32x48,48x72,72x108,108x162,160x240,240x360,360x540,480x720,540x810,640x960,720x1080,1080x1621,1280x1921,1440x2161,1706x2560&from=bu&cs=1706x0",
-	  "hints": 2
-	}
+      "hints": 2
+    }
   ]
 }

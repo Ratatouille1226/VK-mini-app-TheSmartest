@@ -10,6 +10,7 @@ export const Quiz = () => {
 	const type = useAppSelector((state) => state.type.type);
 	const users = useAppSelector((state) => state.user.list);
 	const currentUser = users.find((cur) => cur.id === '1'); //Текущий пользователь
+	const [seconds, setSeconds] = useState<number>(10);
 
 	const { data: questions, status, error } = useAppSelector((state) => state.questions);
 
@@ -24,12 +25,31 @@ export const Quiz = () => {
 		}
 	}, [type, dispatch]);
 
+	useEffect(() => {
+		if (step >= questions.length) return;
+
+		if (seconds > 0) {
+			const timerId = setTimeout(() => {
+				setSeconds((prev) => prev - 1);
+			}, 1000);
+
+			return () => clearTimeout(timerId);
+		} else {
+			handleTimeout();
+		}
+	}, [seconds, step, questions.length]);
+
+	const handleTimeout = () => {
+		onClickVariant(-1); //Передаю -1 чтобы ответ засчитывался как неправильный, можно передавать любую цифру кроме индекса вопросов
+	};
+
 	const onClickVariant = (index: number) => {
 		setStep(step + 1);
 
 		if (index === question.correct) {
 			setScore(score + 1);
 		}
+		setSeconds(10);
 	};
 
 	const setUserScore = () => {
@@ -64,6 +84,7 @@ export const Quiz = () => {
 									{ques}
 								</span>
 							))}
+							<p className={styles['timer']}>{`Осталось времени: ${seconds} секунд`}</p>
 						</div>
 					</div>
 				) : (
