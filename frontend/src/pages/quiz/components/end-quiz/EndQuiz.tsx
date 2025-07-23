@@ -1,3 +1,4 @@
+import styles from './endQuiz.module.css';
 import { Link } from 'react-router-dom';
 import { useAppSelector } from '../../../../hooks';
 import { AlreadyPassedQuiz } from '../already-passed-quiz/AlreadyPassedQuiz';
@@ -29,7 +30,7 @@ const EndQuiz: React.FC<EndQuizProps> = ({ score, questions, setStep, setUserSco
 		(type === 'hard' && currentUser?.isEndHardQuiz);
 
 	return (
-		<div>
+		<div className={styles['endgame']}>
 			<span>
 				Вы завершили тест: правильных ответов {score} из {questions.length}
 			</span>

@@ -1,0 +1,21 @@
+.endgame {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.endgame a {
+	background-color: rgb(211, 51, 255);
+	width: 150px;
+	height: 50px;
+	border-radius: 10px;
+	text-decoration: none;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 18px;
+}

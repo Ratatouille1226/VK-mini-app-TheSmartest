@@ -1,33 +1,28 @@
 import styles from './leaderboard.module.css';
-import sith from '../../../../../../designImages/sith.jpg';
-import neSith from '../../../../../../designImages/neSith.jpg';
 import { Link } from 'react-router-dom';
+import { useAppSelector } from '../../../../hooks';
 
 export const Leaderboard = () => {
+	const user = useAppSelector((state) => state.user.list);
+
 	return (
 		<div className={styles['leaderboard']}>
 			<h2>Список лидеров</h2>
 			<div className={styles['user']}>
-				<img src={sith} alt="sith" />
-				<div className={styles['about']}>
-					<span>Владыка Ситх</span>
-					<span>0</span>
-				</div>
-				<a href="https://vk.com/id867482045">
-					<i className="fa-solid fa-eye"></i>
-				</a>
+				{user.map((u) => (
+					<>
+						<img src={u.img} alt="sith" />
+						<div className={styles['about']}>
+							<span>{u.name}</span>
+							<span>{u.score}</span>
+						</div>
+						<a href={u.url}>
+							<i className="fa-solid fa-eye"></i>
+						</a>
+					</>
+				))}
 			</div>
-			<div className={styles['user']}>
-				<img src={neSith} alt="neSith" />
-				<div className={styles['about']}>
-					<span>Уилл Смит</span>
-					<span>0</span>
-				</div>
-				<a href="https://vk.com/tjacob">
-					<i className="fa-solid fa-eye"></i>
-				</a>
-			</div>
-			<Link className={styles['link']} to="/">
+			<Link className={styles['link']} to="/list-leaders">
 				Открыть список лидеров
 			</Link>
 		</div>

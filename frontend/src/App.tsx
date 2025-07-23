@@ -1,7 +1,7 @@
 import styles from './app.module.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ImagesBackground } from './pages/home/components';
-import { ChooseLevel, Conditions, Quiz, Home } from './pages';
+import { ChooseLevel, Conditions, Quiz, Home, ListLeaders } from './pages';
 import { Provider } from 'react-redux';
 import { store } from './store';
 
@@ -15,6 +15,7 @@ export const App = () => {
 						<Route path="/conditions" element={<Conditions />} />
 						<Route path="/choose-level" element={<ChooseLevel />} />
 						<Route path="/quiz" element={<Quiz />} />
+						<Route path="/list-leaders" element={<ListLeaders />} />
 					</Routes>
 				</BrowserRouter>
 				<ImagesBackground />
