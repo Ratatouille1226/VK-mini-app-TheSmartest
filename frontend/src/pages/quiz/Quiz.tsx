@@ -9,7 +9,7 @@ export const Quiz = () => {
 	const dispatch = useAppDispatch();
 	const type = useAppSelector((state) => state.type.type);
 	const users = useAppSelector((state) => state.user.list);
-	const currentUser = users.find((cur) => cur.id === '1'); //Текущий пользователь
+	const currentUser = users.find((cur) => cur.id); //Текущий пользователь
 	const [seconds, setSeconds] = useState<number>(10);
 
 	const { data: questions, status, error } = useAppSelector((state) => state.questions);
@@ -62,7 +62,7 @@ export const Quiz = () => {
 
 		if (isAlreadyPassed) return;
 
-		dispatch(setScoreUser({ id: '1', score, type }));
+		dispatch(setScoreUser({ id: `${currentUser?.id}`, score, type }));
 	};
 
 	// if (status === 'loading') return <p>Загрузка вопросов...</p>;
