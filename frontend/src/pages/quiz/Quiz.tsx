@@ -4,6 +4,7 @@ import styles from './quiz.module.css';
 import { fetchQuestions } from '../../slice-fetch/fetchQuestions';
 import { setScoreUser } from '../../slice-fetch/setScoreUser';
 import EndQuiz from './components/end-quiz/EndQuiz';
+import bridge from '@vkontakte/vk-bridge';
 
 export const Quiz = () => {
 	const dispatch = useAppDispatch();
@@ -11,6 +12,7 @@ export const Quiz = () => {
 	const users = useAppSelector((state) => state.user.list);
 	const currentUser = users.find((cur) => cur.id); //Текущий пользователь
 	const [seconds, setSeconds] = useState<number>(10);
+	const [currentUserSession, setCurrentUserSession] = useState('');
 
 	const { data: questions, status, error } = useAppSelector((state) => state.questions);
 
@@ -23,6 +25,11 @@ export const Quiz = () => {
 		if (type) {
 			dispatch(fetchQuestions(type));
 		}
+
+		bridge.send('VKWebAppInit');
+		bridge.send('VKWebAppGetUserInfo').then((userInfo) => {
+			setCurrentUserSession(userInfo.id.toString());
+		});
 	}, [type, dispatch]);
 
 	useEffect(() => {
@@ -62,7 +69,7 @@ export const Quiz = () => {
 
 		if (isAlreadyPassed) return;
 
-		dispatch(setScoreUser({ id: `${currentUser?.id}`, score, type }));
+		dispatch(setScoreUser({ id: currentUserSession, score, type }));
 	};
 
 	// if (status === 'loading') return <p>Загрузка вопросов...</p>;
